@@ -211,7 +211,118 @@ p {
     font-size: 1.2rem;
     margin-top: 0;
 }
+/* ===== Expert Section ===== */
+.expert-section {
+    background: #f9f5e9;
+    padding: 60px 0;
+    border-top: 1px solid rgba(212, 175, 55, 0.3);
+    border-bottom: 1px solid rgba(212, 175, 55, 0.3);
+}
 
+.expert-profile {
+    display: flex;
+    gap: 40px;
+    align-items: center;
+    margin-top: 30px;
+}
+
+.expert-image {
+    flex: 1;
+    border-radius: 10px;
+    overflow: hidden;
+    border: 3px solid #d4af37;
+    position: relative;
+}
+
+.expert-image img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.generation-badge {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(212, 175, 55, 0.9);
+    color: #1a2e35;
+    padding: 6px 15px;
+    border-radius: 20px;
+    font-weight: bold;
+    font-size: 14px;
+}
+
+.expert-details {
+    flex: 2;
+}
+
+.qualification {
+    color: #d4af37;
+    font-weight: 600;
+    margin: 10px 0 20px;
+}
+
+.expert-features {
+    margin: 25px 0;
+    list-style: none;
+}
+
+.expert-features li {
+    margin-bottom: 12px;
+    position: relative;
+    padding-left: 30px;
+}
+
+.expert-features i {
+    color: #d4af37;
+    position: absolute;
+    left: 0;
+    top: 4px;
+}
+
+.legacy-name {
+    color: #d4af37;
+    font-weight: 400;
+}
+
+.legacy-box {
+    background: rgba(212, 175, 55, 0.1);
+    border-left: 3px solid #d4af37;
+    padding: 15px;
+    margin: 20px 0;
+    display: flex;
+    gap: 15px;
+}
+
+.legacy-box i {
+    color: #d4af37;
+    font-size: 24px;
+    margin-top: 3px;
+}
+
+.btn-portfolio {
+    background: #1a2e35;
+    margin-top: 20px;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.btn-portfolio:hover {
+    background: #2a4d5b;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .expert-profile {
+        flex-direction: column;
+    }
+    .expert-image {
+        max-width: 300px;
+        margin-bottom: 20px;
+    }
+}
 /* Testimonials Section */
 .testimonials-section {
     padding: 4rem 0;
