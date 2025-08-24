@@ -11,11 +11,505 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
     
-    <link rel="stylesheet" href="style.css">
-    
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    
+    <style>
+        /* Reset and Base Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f9f9f9;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Navigation Styles */
+        .main-nav {
+            background: #1a2e35;
+            padding: 15px 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .nav-logo a {
+            color: #d4af37;
+            font-size: 24px;
+            font-weight: bold;
+            text-decoration: none;
+            font-family: 'Playfair Display', serif;
+        }
+        
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            gap: 30px;
+        }
+        
+        .nav-menu a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+            font-size: 16px;
+        }
+        
+        .nav-menu a:hover {
+            color: #d4af37;
+        }
+        
+        .nav-cta {
+            background: #d4af37;
+            color: #1a2e35 !important;
+            padding: 10px 20px;
+            border-radius: 5px;
+            font-weight: bold !important;
+        }
+        
+        .nav-cta:hover {
+            background: #c19b2e;
+            color: white !important;
+        }
+        
+        /* Mobile Navigation */
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            color: white;
+            font-size: 24px;
+            cursor: pointer;
+        }
+        
+        /* Header Styles */
+        .main-header {
+            background: #1a2e35;
+            color: white;
+            padding: 15px 0;
+        }
+        
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 24px;
+            color: #d4af37;
+        }
+        
+        .contact-info p {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin: 5px 0;
+        }
+        
+        /* Hero Section */
+        .hero-section {
+            background: linear-gradient(to right, #2a4d5b, #1a2e35);
+            color: white;
+            padding: 60px 0;
+        }
+        
+        .hero-content {
+            display: flex;
+            align-items: center;
+            gap: 40px;
+        }
+        
+        .hero-text {
+            flex: 1;
+        }
+        
+        .hero-text h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 36px;
+            margin-bottom: 20px;
+        }
+        
+        .hero-subtitle {
+            font-size: 18px;
+            margin-bottom: 25px;
+        }
+        
+        .trust-badges {
+            display: flex;
+            gap: 15px;
+            margin-bottom: 30px;
+        }
+        
+        .badge {
+            background: rgba(212, 175, 55, 0.2);
+            padding: 8px 15px;
+            border-radius: 20px;
+            font-size: 14px;
+        }
+        
+        .cta-button {
+            display: inline-block;
+            background: #d4af37;
+            color: #1a2e35;
+            padding: 15px 30px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: background 0.3s;
+        }
+        
+        .cta-button:hover {
+            background: #c19b2e;
+        }
+        
+        .hero-image {
+            flex: 1;
+            text-align: center;
+        }
+        
+        .hero-image img {
+            max-width: 100%;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+        
+        /* Section Styles */
+        section {
+            padding: 60px 0;
+        }
+        
+        .section-title {
+            font-family: 'Playfair Display', serif;
+            text-align: center;
+            margin-bottom: 40px;
+            color: #1a2e35;
+        }
+        
+        /* About Section */
+        .about-section {
+            background: #f0f7f5;
+        }
+        
+        .about-text {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+            font-size: 18px;
+            line-height: 1.8;
+        }
+        
+        /* Product Components */
+        .component-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+        
+        .component-item {
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            text-align: center;
+            padding: 25px;
+            transition: transform 0.3s;
+        }
+        
+        .component-item:hover {
+            transform: translateY(-5px);
+        }
+        
+        .component-item img {
+            max-width: 100%;
+            height: 200px;
+            object-fit: contain;
+            margin-bottom: 20px;
+        }
+        
+        .component-item h4 {
+            color: #1a2e35;
+            margin-bottom: 15px;
+        }
+        
+        /* Benefits Section */
+        .benefits-section {
+            background: #f0f7f5;
+        }
+        
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+        }
+        
+        .benefit-item {
+            text-align: center;
+            padding: 30px 20px;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+        }
+        
+        .benefit-item i {
+            font-size: 40px;
+            color: #d4af37;
+            margin-bottom: 20px;
+        }
+        
+        .benefit-item h5 {
+            color: #1a2e35;
+            margin-bottom: 15px;
+        }
+        
+        /* Expert Section */
+        .expert-section {
+            background: white;
+        }
+        
+        .expert-profile {
+            display: flex;
+            gap: 40px;
+            align-items: center;
+            margin-top: 40px;
+        }
+        
+        .expert-image {
+            flex: 1;
+            position: relative;
+        }
+        
+        .expert-image img {
+            width: 100%;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        .generation-badge {
+            position: absolute;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: rgba(212, 175, 55, 0.9);
+            color: #1a2e35;
+            padding: 8px 20px;
+            border-radius: 20px;
+            font-weight: bold;
+        }
+        
+        .expert-details {
+            flex: 2;
+        }
+        
+        .qualification {
+            color: #d4af37;
+            font-weight: 600;
+            margin: 10px 0 20px;
+        }
+        
+        .expert-features {
+            list-style: none;
+            margin: 25px 0;
+        }
+        
+        .expert-features li {
+            margin-bottom: 12px;
+            padding-left: 30px;
+            position: relative;
+        }
+        
+        .expert-features i {
+            color: #d4af37;
+            position: absolute;
+            left: 0;
+            top: 4px;
+        }
+        
+        .legacy-name {
+            color: #d4af37;
+        }
+        
+        .legacy-box {
+            background: rgba(212, 175, 55, 0.1);
+            border-left: 3px solid #d4af37;
+            padding: 20px;
+            margin: 25px 0;
+            display: flex;
+            gap: 15px;
+        }
+        
+        .legacy-box i {
+            color: #d4af37;
+            font-size: 24px;
+        }
+        
+        .btn-portfolio {
+            display: inline-block;
+            background: #1a2e35;
+            color: white;
+            padding: 12px 25px;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: 600;
+            transition: background 0.3s;
+        }
+        
+        .btn-portfolio:hover {
+            background: #2a4d5b;
+        }
+        
+        /* Testimonials */
+        .testimonial-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+        
+        .testimonial-card {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        .quote {
+            font-style: italic;
+            margin-bottom: 20px;
+            position: relative;
+            padding-left: 30px;
+        }
+        
+        .quote:before {
+            content: """;
+            position: absolute;
+            left: 0;
+            top: -15px;
+            font-size: 50px;
+            color: #d4af37;
+            font-family: serif;
+        }
+        
+        .customer-name {
+            font-weight: bold;
+            color: #1a2e35;
+        }
+        
+        /* CTA Section */
+        .cta-section {
+            background: linear-gradient(to right, #2a4d5b, #1a2e35);
+            color: white;
+            text-align: center;
+        }
+        
+        .cta-content h3 {
+            font-family: 'Playfair Display', serif;
+            margin-bottom: 20px;
+        }
+        
+        .cta-content p {
+            margin-bottom: 30px;
+            font-size: 18px;
+        }
+        
+        .cta-button.large {
+            padding: 18px 40px;
+            font-size: 18px;
+        }
+        
+        /* Footer */
+        .main-footer {
+            background: #1a2e35;
+            color: white;
+            text-align: center;
+            padding: 30px 0;
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 992px) {
+            .hero-content {
+                flex-direction: column;
+            }
+            
+            .expert-profile {
+                flex-direction: column;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .nav-menu {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                background: #1a2e35;
+                flex-direction: column;
+                padding: 20px;
+                gap: 15px;
+            }
+            
+            .nav-menu.active {
+                display: flex;
+            }
+            
+            .mobile-menu-btn {
+                display: block;
+            }
+            
+            .header-container {
+                flex-direction: column;
+                gap: 15px;
+            }
+            
+            .trust-badges {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+    </style>
 </head>
 <body>
+    <!-- Navigation Menu -->
+    <nav class="main-nav">
+        <div class="container nav-container">
+            <div class="nav-logo">
+                <a href="index.html">Ayushil Gold</a>
+            </div>
+            
+            <button class="mobile-menu-btn" id="mobile-menu-btn">
+                <i class="fas fa-bars"></i>
+            </button>
+            
+            <ul class="nav-menu" id="nav-menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#products">Products</a></li>
+                <li><a href="#expert">Our Expert</a></li>
+                <li><a href="order.html" class="nav-cta">Order Now</a></li>
+            </ul>
+        </div>
+    </nav>
+
     <header class="main-header">
         <div class="container header-container">
             <h1 class="logo">Ayushil Gold Kit</h1>
@@ -36,7 +530,7 @@
                         <span class="badge">Trusted Since 1971</span>
                         <span class="badge">Doctor-Approved Formula</span>
                     </div>
-                    <a href="#buy-now" class="cta-button">Buy Now for Only ₹2100</a>
+                    <a href="order.html" class="cta-button">Buy Now for Only ₹2100</a>
                 </div>
                 <div class="hero-image">
                     <img src="Ayushil Gold Kit.jpeg" 
@@ -46,7 +540,7 @@
             </div>
         </section>
 
-        <section class="about-section">
+        <section class="about-section" id="about">
             <div class="container">
                 <h3 class="section-title">About Avana Ayurveda</h3>
                 <p class="about-text">
@@ -55,7 +549,7 @@
             </div>
         </section>
 
-        <section class="product-components">
+        <section class="product-components" id="products">
             <div class="container">
                 <h3 class="section-title">What's Inside the Ayushil Gold Kit?</h3>
                 <div class="component-grid">
@@ -111,48 +605,50 @@
                 </div>
             </div>
         </section>
-        <!-- ===== Expert Counselor Section ===== -->
-<section class="expert-section">
-    <div class="container">
-        <div class="section-title">
-            <h2>Our Ayurvedic Legacy</h2>
-            <p>Since 1971 • Now Serving 3rd Generation</p>
-        </div>
         
-        <div class="expert-profile">
-            <div class="expert-image">
-                <img src="imagesyoung-hakeem.jpg" 
-                     alt="Dr. [Name], son of Hakeem Basit Khan continuing family legacy"
-                     loading="lazy">
-                <div class="generation-badge">3rd Generation Practitioner</div>
-            </div>
-            
-            <div class="expert-details">
-                <h3>Continuing the Legacy of <span class="legacy-name">Hakeem Basit Khan</span></h3>
-                <p class="qualification">BAMS, Modern Ayurveda Specialist</p>
+        <!-- ===== Expert Counselor Section ===== -->
+        <section class="expert-section" id="expert">
+            <div class="container">
+                <div class="section-title">
+                    <h2>Our Ayurvedic Legacy</h2>
+                    <p>Since 1971 • Now Serving 3rd Generation</p>
+                </div>
                 
-                <div class="expert-bio">
-                    <p>Under his father's guidance, our practitioner blends 50+ years of family herbal knowledge with modern Ayurvedic research to deliver the authentic Ayushil formulations.</p>
-                    
-                    <ul class="expert-features">
-                        <li><i class="fas fa-herbal"></i> Trained in classical Unani medicine since childhood</li>
-                        <li><i class="fas fa-flask"></i> Modernized traditional formulas for today's lifestyle</li>
-                        <li><i class="fas fa-certificate"></i> Certified from National Institute of Ayurveda</li>
-                    </ul>
-                    
-                    <div class="legacy-box">
-                        <i class="fas fa-history"></i>
-                        <p>"The Hakeem Basit Khan brand has been trusted since 1971, now serving a new generation with the same commitment to purity."</p>
+                <div class="expert-profile">
+                    <div class="expert-image">
+                        <img src="imagesyoung-hakeem.jpg" 
+                             alt="Dr. [Name], son of Hakeem Basit Khan continuing family legacy"
+                             loading="lazy">
+                        <div class="generation-badge">3rd Generation Practitioner</div>
                     </div>
                     
-                    <a href="https://www.hakeembasitkhan.in/" class="btn btn-portfolio" target="_blank" rel="noopener">
-                        <i class="fas fa-external-link-alt"></i> Visit Official Portfolio
-                    </a>
+                    <div class="expert-details">
+                        <h3>Continuing the Legacy of <span class="legacy-name">Hakeem Basit Khan</span></h3>
+                        <p class="qualification">BAMS, Modern Ayurveda Specialist</p>
+                        
+                        <div class="expert-bio">
+                            <p>Under his father's guidance, our practitioner blends 50+ years of family herbal knowledge with modern Ayurvedic research to deliver the authentic Ayushil formulations.</p>
+                            
+                            <ul class="expert-features">
+                                <li><i class="fas fa-herbal"></i> Trained in classical Unani medicine since childhood</li>
+                                <li><i class="fas fa-flask"></i> Modernized traditional formulas for today's lifestyle</li>
+                                <li><i class="fas fa-certificate"></i> Certified from National Institute of Ayurveda</li>
+                            </ul>
+                            
+                            <div class="legacy-box">
+                                <i class="fas fa-history"></i>
+                                <p>"The Hakeem Basit Khan brand has been trusted since 1971, now serving a new generation with the same commitment to purity."</p>
+                            </div>
+                            
+                            <a href="https://www.hakeembasitkhan.in/" class="btn btn-portfolio" target="_blank" rel="noopener">
+                                <i class="fas fa-external-link-alt"></i> Visit Official Portfolio
+                            </a>
+                        </div>
+                    </div>
                 </div>
             </div>
-        </div>
-    </div>
-</section>
+        </section>
+        
         <section class="testimonials-section">
             <div class="container">
                 <h3 class="section-title">What Our Customers Say</h3>
@@ -173,7 +669,7 @@
             <div class="container cta-content">
                 <h3>Ready to Live Long and Live Strong?</h3>
                 <p>Order your complete Ayushil Gold Kit today and feel the difference.</p>
-                <a href="#" class="cta-button large">Buy Now for Only ₹2100</a>
+                <a href="order.html" class="cta-button large">Buy Now for Only ₹2100</a>
             </div>
         </section>
     </main>
@@ -184,5 +680,32 @@
             <p>Trusted Since 1971</p>
         </div>
     </footer>
+
+    <script>
+        // Mobile menu toggle
+        document.getElementById('mobile-menu-btn').addEventListener('click', function() {
+            document.getElementById('nav-menu').classList.toggle('active');
+        });
+        
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    targetElement.scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                    
+                    // Close mobile menu after clicking
+                    document.getElementById('nav-menu').classList.remove('active');
+                }
+            });
+        });
+    </script>
 </body>
 </html>
