@@ -15,6 +15,7 @@ body {
     box-sizing: border-box;
     color: var(--text-color);
     background-color: var(--light-bg);
+    overflow-x: hidden; /* Prevent horizontal scrolling */
 }
 
 .container {
@@ -38,6 +39,8 @@ p {
     margin-bottom: 3rem;
     position: relative;
     display: inline-block;
+    /* NEW: Ensure section title itself is centered if parent is text-align:center */
+    text-align: center; 
 }
 
 .section-title::after {
@@ -46,7 +49,7 @@ p {
     width: 60px;
     height: 3px;
     background: var(--primary);
-    margin: 0.5rem auto 0;
+    margin: 0.5rem auto 0; /* NEW: Center the underline */
 }
 
 /* Header */
@@ -82,19 +85,20 @@ p {
 .hero-section {
     background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('background-hero.jpg') no-repeat center center/cover;
     color: var(--white);
-    text-align: center;
+    text-align: center; /* <<< IMPORTANT: Added to center text and inline-block elements */
     padding: 4rem 0;
 }
 
 .hero-content {
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: center; /* <<< IMPORTANT: Centers flex items horizontally when flex-direction is column */
     gap: 2rem;
 }
 
 .hero-text {
     max-width: 600px;
+    margin: 0 auto; /* NEW: Center hero text container */
 }
 
 .hero-text h2 {
@@ -111,7 +115,8 @@ p {
 
 .trust-badges {
     display: flex;
-    justify-content: center;
+    flex-wrap: wrap; /* NEW: Allow badges to wrap on smaller screens */
+    justify-content: center; /* <<< IMPORTANT: Centers flex items horizontally */
     gap: 1rem;
     margin-bottom: 2rem;
 }
@@ -124,6 +129,12 @@ p {
     border-radius: 50px;
     font-size: 0.9rem;
     font-weight: 600;
+    white-space: nowrap; /* NEW: Prevent badge text from wrapping */
+}
+
+.hero-image {
+    width: 100%; /* NEW: Ensure the container takes full width */
+    text-align: center; /* NEW: Center the image if it's inline-block */
 }
 
 .hero-image img {
@@ -131,13 +142,15 @@ p {
     height: auto;
     border-radius: 10px;
     box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+    display: block; /* NEW: Allows margin:auto to center it */
+    margin: 0 auto; /* NEW: Explicitly center the image */
 }
 
 /* About Section */
 .about-section {
     padding: 4rem 0;
     background-color: var(--white);
-    text-align: center;
+    text-align: center; /* NEW: Center content within about section */
 }
 
 .about-text {
@@ -155,6 +168,7 @@ p {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 2rem;
+    justify-items: center; /* NEW: Centers grid items horizontally */
 }
 
 .component-item {
@@ -163,6 +177,7 @@ p {
     padding: 2rem;
     box-shadow: 0 2px 10px rgba(0,0,0,0.05);
     transition: transform 0.3s ease;
+    text-align: center; /* NEW: Ensure text within component item is centered */
 }
 
 .component-item:hover {
@@ -172,7 +187,8 @@ p {
 .component-item img {
     max-width: 150px;
     height: auto;
-    margin-bottom: 1rem;
+    margin: 0 auto 1rem; /* NEW: Center image and add bottom margin */
+    display: block; /* NEW: Allows margin:auto to center it */
 }
 
 .component-item h4 {
@@ -185,13 +201,14 @@ p {
 .benefits-section {
     padding: 4rem 0;
     background-color: var(--light-bg);
-    text-align: center;
+    text-align: center; /* NEW: Center content within benefits section */
 }
 
 .benefits-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 2rem;
+    justify-items: center; /* NEW: Centers grid items horizontally */
 }
 
 .benefit-item {
@@ -199,6 +216,7 @@ p {
     border-radius: 10px;
     padding: 2rem;
     box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    text-align: center; /* NEW: Ensure text within benefit item is centered */
 }
 
 .benefit-item i {
@@ -217,13 +235,18 @@ p {
     padding: 60px 0;
     border-top: 1px solid rgba(212, 175, 55, 0.3);
     border-bottom: 1px solid rgba(212, 175, 55, 0.3);
+    text-align: center; /* NEW: Center content within expert section */
 }
 
 .expert-profile {
     display: flex;
+    flex-direction: column; /* NEW: Stack items vertically on mobile first */
     gap: 40px;
-    align-items: center;
+    align-items: center; /* NEW: Center items when stacked vertically */
     margin-top: 30px;
+    max-width: 800px; /* NEW: Limit width for content */
+    margin-left: auto; /* NEW: Center the profile container */
+    margin-right: auto; /* NEW: Center the profile container */
 }
 
 .expert-image {
@@ -232,6 +255,7 @@ p {
     overflow: hidden;
     border: 3px solid #d4af37;
     position: relative;
+    max-width: 300px; /* NEW: Limit image width on mobile */
 }
 
 .expert-image img {
@@ -251,10 +275,12 @@ p {
     border-radius: 20px;
     font-weight: bold;
     font-size: 14px;
+    white-space: nowrap; /* NEW: Prevent text wrapping */
 }
 
 .expert-details {
     flex: 2;
+    text-align: center; /* NEW: Center text within expert details */
 }
 
 .qualification {
@@ -264,8 +290,11 @@ p {
 }
 
 .expert-features {
-    margin: 25px 0;
+    margin: 25px auto; /* NEW: Center the list */
     list-style: none;
+    padding: 0; /* NEW: Remove default padding */
+    text-align: left; /* NEW: Align list items to left, but center the list itself */
+    max-width: 300px; /* NEW: Limit width for list */
 }
 
 .expert-features li {
@@ -290,9 +319,12 @@ p {
     background: rgba(212, 175, 55, 0.1);
     border-left: 3px solid #d4af37;
     padding: 15px;
-    margin: 20px 0;
+    margin: 20px auto; /* NEW: Center the legacy box */
     display: flex;
     gap: 15px;
+    max-width: 500px; /* NEW: Limit width for legacy box */
+    align-items: center; /* NEW: Vertically center items in legacy box */
+    justify-content: center; /* NEW: Horizontally center items in legacy box */
 }
 
 .legacy-box i {
@@ -307,22 +339,13 @@ p {
     display: inline-flex;
     align-items: center;
     gap: 8px;
+    /* NEW: Ensure this button is also centered if its parent is text-align:center */
 }
 
 .btn-portfolio:hover {
     background: #2a4d5b;
 }
 
-/* Responsive Design */
-@media (max-width: 768px) {
-    .expert-profile {
-        flex-direction: column;
-    }
-    .expert-image {
-        max-width: 300px;
-        margin-bottom: 20px;
-    }
-}
 /* Testimonials Section */
 .testimonials-section {
     padding: 4rem 0;
@@ -343,6 +366,7 @@ p {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 2rem;
+    justify-items: center; /* NEW: Centers grid items horizontally */
 }
 
 .testimonial-card {
@@ -351,6 +375,8 @@ p {
     padding: 2rem;
     text-align: center;
     border: 1px solid rgba(255, 255, 255, 0.2);
+    max-width: 350px; /* NEW: Limit card width */
+    margin: 0 auto; /* NEW: Center individual cards */
 }
 
 .testimonial-card .quote {
@@ -370,12 +396,13 @@ p {
     background-color: var(--red);
     color: var(--white);
     padding: 3rem 0;
-    text-align: center;
+    text-align: center; /* <<< IMPORTANT: Added to center text and the CTA button */
 }
 
 .cta-content h3 {
     font-size: 2rem;
     color: var(--white);
+    margin-bottom: 1.5rem; /* NEW: Add space below heading */
 }
 
 .cta-button {
@@ -387,6 +414,7 @@ p {
     border-radius: 50px;
     font-weight: 600;
     transition: background-color 0.3s ease, transform 0.3s ease;
+    /* This button is already inline-block, so text-align: center on parent works */
 }
 
 .cta-button:hover {
@@ -426,4 +454,47 @@ p {
     .hero-subtitle {
         font-size: 1rem;
     }
+    /* NEW: Explicitly center the expert profile on smaller screens */
+    .expert-profile {
+        flex-direction: column;
+        align-items: center;
+    }
+    .expert-image {
+        max-width: 300px;
+        margin-bottom: 20px;
+    }
+    .expert-details {
+        text-align: center; /* Center align text in expert details on mobile */
+    }
+    .expert-features {
+        margin-left: auto;
+        margin-right: auto;
+        text-align: left; /* Keep feature list text left aligned */
+    }
+    .legacy-box {
+        flex-direction: column; /* Stack legacy box content */
+        align-items: center; /* Center items when stacked */
+        text-align: center; /* Center text within legacy box */
+    }
 }
+
+@media (min-width: 769px) { /* NEW: For larger screens, align expert profile horizontally */
+    .expert-profile {
+        flex-direction: row;
+        text-align: left; /* Align text left for desktop */
+    }
+    .expert-details {
+        text-align: left; /* Align text left for desktop */
+    }
+    .expert-features {
+        margin-left: 0; /* Reset margin */
+        margin-right: 0; /* Reset margin */
+        text-align: left;
+    }
+    .legacy-box {
+        flex-direction: row; /* Keep legacy box content in a row */
+        justify-content: flex-start; /* Align to start for desktop */
+        text-align: left; /* Align text left */
+    }
+}
+
