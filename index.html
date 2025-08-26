@@ -5,13 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ayushil Gold Kit - Premium Ayurvedic Power & Strength Formula</title>
     <!-- Favicon -->
-<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-<link rel="manifest" href="/site.webmanifest">
-<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
-<meta name="msapplication-TileColor" content="#da532c">
-<meta name="theme-color" content="#ffffff">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="theme-color" content="#ffffff">
     <meta name="description" content="Trusted since 1971, Ayushil Gold Kit boosts stamina & vitality with 100% natural ingredients. Doctor-approved Ayurvedic formulation.">
     <meta name="keywords" content="ayurvedic capsules, stamina booster, power kit, since 1971, hakeem basit khan, ayushil gold kit, ayushil power, ayushil stamin">
 
@@ -45,7 +45,7 @@
         /* Navigation Styles */
         .main-nav {
             background: #1a2e35;
-            padding: 15px 0;
+            padding: 12px 0;
             position: sticky;
             top: 0;
             z-index: 1000;
@@ -60,7 +60,7 @@
         
         .nav-logo a {
             color: #d4af37;
-            font-size: 24px;
+            font-size: 22px;
             font-weight: bold;
             text-decoration: none;
             font-family: 'Playfair Display', serif;
@@ -69,7 +69,7 @@
         .nav-menu {
             display: flex;
             list-style: none;
-            gap: 30px;
+            gap: 20px;
         }
         
         .nav-menu a {
@@ -78,6 +78,7 @@
             font-weight: 500;
             transition: color 0.3s;
             font-size: 16px;
+            padding: 8px 0;
         }
         
         .nav-menu a:hover {
@@ -87,7 +88,7 @@
         .nav-cta {
             background: #d4af37;
             color: #1a2e35 !important;
-            padding: 10px 20px;
+            padding: 10px 18px;
             border-radius: 5px;
             font-weight: bold !important;
         }
@@ -118,53 +119,60 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
+            flex-wrap: wrap;
         }
         
         .logo {
             font-family: 'Playfair Display', serif;
-            font-size: 24px;
+            font-size: 22px;
             color: #d4af37;
+            margin-bottom: 10px;
         }
         
         .contact-info p {
             display: flex;
             align-items: center;
-            gap: 10px;
+            gap: 8px;
             margin: 5px 0;
+            font-size: 14px;
         }
         
         /* Hero Section */
         .hero-section {
             background: linear-gradient(to right, #2a4d5b, #1a2e35);
             color: white;
-            padding: 60px 0;
+            padding: 40px 0;
         }
         
         .hero-content {
             display: flex;
             align-items: center;
-            gap: 40px;
+            gap: 30px;
+            flex-wrap: wrap;
         }
         
         .hero-text {
             flex: 1;
+            min-width: 300px;
         }
         
         .hero-text h2 {
             font-family: 'Playfair Display', serif;
-            font-size: 36px;
-            margin-bottom: 20px;
+            font-size: 32px;
+            margin-bottom: 15px;
+            line-height: 1.2;
         }
         
         .hero-subtitle {
             font-size: 18px;
-            margin-bottom: 25px;
+            margin-bottom: 20px;
         }
         
         .trust-badges {
             display: flex;
-            gap: 15px;
-            margin-bottom: 30px;
+            gap: 12px;
+            margin-bottom: 25px;
+            flex-wrap: wrap;
         }
         
         .badge {
@@ -172,17 +180,19 @@
             padding: 8px 15px;
             border-radius: 20px;
             font-size: 14px;
+            white-space: nowrap;
         }
         
         .cta-button {
             display: inline-block;
             background: #d4af37;
             color: #1a2e35;
-            padding: 15px 30px;
+            padding: 14px 28px;
             border-radius: 5px;
             text-decoration: none;
             font-weight: bold;
             transition: background 0.3s;
+            font-size: 16px;
         }
         
         .cta-button:hover {
@@ -191,25 +201,49 @@
         
         .hero-image {
             flex: 1;
+            min-width: 300px;
             text-align: center;
+            position: relative;
         }
         
         .hero-image img {
             max-width: 100%;
             border-radius: 10px;
             box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+            transition: opacity 0.5s ease;
+        }
+        
+        .image-slider-controls {
+            display: flex;
+            justify-content: center;
+            margin-top: 15px;
+            gap: 10px;
+        }
+        
+        .slider-dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.5);
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+        
+        .slider-dot.active {
+            background: #d4af37;
         }
         
         /* Section Styles */
         section {
-            padding: 60px 0;
+            padding: 50px 0;
         }
         
         .section-title {
             font-family: 'Playfair Display', serif;
             text-align: center;
-            margin-bottom: 40px;
+            margin-bottom: 35px;
             color: #1a2e35;
+            font-size: 28px;
         }
         
         /* About Section */
@@ -221,16 +255,16 @@
             max-width: 800px;
             margin: 0 auto;
             text-align: center;
-            font-size: 18px;
-            line-height: 1.8;
+            font-size: 17px;
+            line-height: 1.7;
         }
         
         /* Product Components */
         .component-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-            margin-top: 40px;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+            margin-top: 35px;
         }
         
         .component-item {
@@ -239,7 +273,7 @@
             overflow: hidden;
             box-shadow: 0 5px 15px rgba(0,0,0,0.1);
             text-align: center;
-            padding: 25px;
+            padding: 20px;
             transition: transform 0.3s;
         }
         
@@ -249,14 +283,15 @@
         
         .component-item img {
             max-width: 100%;
-            height: 200px;
+            height: 180px;
             object-fit: contain;
-            margin-bottom: 20px;
+            margin-bottom: 15px;
         }
         
         .component-item h4 {
             color: #1a2e35;
-            margin-bottom: 15px;
+            margin-bottom: 12px;
+            font-size: 18px;
         }
         
         /* Benefits Section */
@@ -267,12 +302,12 @@
         .benefits-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 30px;
+            gap: 25px;
         }
         
         .benefit-item {
             text-align: center;
-            padding: 30px 20px;
+            padding: 25px 20px;
             background: white;
             border-radius: 10px;
             box-shadow: 0 5px 15px rgba(0,0,0,0.05);
@@ -281,12 +316,13 @@
         .benefit-item i {
             font-size: 40px;
             color: #d4af37;
-            margin-bottom: 20px;
+            margin-bottom: 15px;
         }
         
         .benefit-item h5 {
             color: #1a2e35;
-            margin-bottom: 15px;
+            margin-bottom: 12px;
+            font-size: 18px;
         }
         
         /* Expert Section */
@@ -296,13 +332,15 @@
         
         .expert-profile {
             display: flex;
-            gap: 40px;
+            gap: 30px;
             align-items: center;
-            margin-top: 40px;
+            margin-top: 35px;
+            flex-wrap: wrap;
         }
         
         .expert-image {
             flex: 1;
+            min-width: 300px;
             position: relative;
         }
         
@@ -314,34 +352,36 @@
         
         .generation-badge {
             position: absolute;
-            bottom: 20px;
+            bottom: 15px;
             left: 50%;
             transform: translateX(-50%);
             background: rgba(212, 175, 55, 0.9);
             color: #1a2e35;
-            padding: 8px 20px;
+            padding: 8px 18px;
             border-radius: 20px;
             font-weight: bold;
+            font-size: 14px;
         }
         
         .expert-details {
             flex: 2;
+            min-width: 300px;
         }
         
         .qualification {
             color: #d4af37;
             font-weight: 600;
-            margin: 10px 0 20px;
+            margin: 10px 0 15px;
         }
         
         .expert-features {
             list-style: none;
-            margin: 25px 0;
+            margin: 20px 0;
         }
         
         .expert-features li {
-            margin-bottom: 12px;
-            padding-left: 30px;
+            margin-bottom: 10px;
+            padding-left: 28px;
             position: relative;
         }
         
@@ -359,22 +399,22 @@
         .legacy-box {
             background: rgba(212, 175, 55, 0.1);
             border-left: 3px solid #d4af37;
-            padding: 20px;
-            margin: 25px 0;
+            padding: 18px;
+            margin: 20px 0;
             display: flex;
-            gap: 15px;
+            gap: 12px;
         }
         
         .legacy-box i {
             color: #d4af37;
-            font-size: 24px;
+            font-size: 22px;
         }
         
         .btn-portfolio {
             display: inline-block;
             background: #1a2e35;
             color: white;
-            padding: 12px 25px;
+            padding: 12px 22px;
             text-decoration: none;
             border-radius: 5px;
             font-weight: 600;
@@ -388,23 +428,23 @@
         /* Testimonials */
         .testimonial-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-            margin-top: 40px;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+            margin-top: 35px;
         }
         
         .testimonial-card {
             background: white;
-            padding: 30px;
+            padding: 25px;
             border-radius: 10px;
             box-shadow: 0 5px 15px rgba(0,0,0,0.1);
         }
         
         .quote {
             font-style: italic;
-            margin-bottom: 20px;
+            margin-bottom: 15px;
             position: relative;
-            padding-left: 30px;
+            padding-left: 28px;
         }
         
         .quote:before {
@@ -412,7 +452,7 @@
             position: absolute;
             left: 0;
             top: -15px;
-            font-size: 50px;
+            font-size: 45px;
             color: #d4af37;
             font-family: serif;
         }
@@ -427,21 +467,23 @@
             background: linear-gradient(to right, #2a4d5b, #1a2e35);
             color: white;
             text-align: center;
+            padding: 50px 0;
         }
         
         .cta-content h3 {
             font-family: 'Playfair Display', serif;
-            margin-bottom: 20px;
+            margin-bottom: 15px;
+            font-size: 28px;
         }
         
         .cta-content p {
-            margin-bottom: 30px;
+            margin-bottom: 25px;
             font-size: 18px;
         }
         
         .cta-button.large {
-            padding: 18px 40px;
-            font-size: 18px;
+            padding: 16px 35px;
+            font-size: 17px;
         }
         
         /* Footer */
@@ -449,7 +491,7 @@
             background: #1a2e35;
             color: white;
             text-align: center;
-            padding: 30px 0;
+            padding: 25px 0;
         }
         
         /* Responsive Design */
@@ -474,6 +516,7 @@
                 flex-direction: column;
                 padding: 20px;
                 gap: 15px;
+                text-align: center;
             }
             
             .nav-menu.active {
@@ -486,12 +529,58 @@
             
             .header-container {
                 flex-direction: column;
-                gap: 15px;
+                gap: 12px;
             }
             
             .trust-badges {
-                flex-direction: column;
-                align-items: center;
+                justify-content: center;
+            }
+            
+            .section-title {
+                font-size: 24px;
+            }
+            
+            .hero-text h2 {
+                font-size: 28px;
+            }
+            
+            .hero-subtitle {
+                font-size: 16px;
+            }
+            
+            .component-grid,
+            .benefits-grid,
+            .testimonial-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .expert-image,
+            .expert-details {
+                min-width: 100%;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .container {
+                padding: 0 15px;
+            }
+            
+            .badge {
+                font-size: 12px;
+                padding: 6px 12px;
+            }
+            
+            .cta-button {
+                padding: 12px 22px;
+                font-size: 15px;
+            }
+            
+            .component-item {
+                padding: 15px;
+            }
+            
+            .testimonial-card {
+                padding: 20px;
             }
         }
     </style>
@@ -537,13 +626,21 @@
                     <div class="trust-badges">
                         <span class="badge">Trusted Since 1971</span>
                         <span class="badge">Doctor-Approved Formula</span>
+                        <span class="badge">100% Natural</span>
                     </div>
                     <a href="order.html" class="cta-button">Buy Now for Only ₹2100</a>
                 </div>
                 <div class="hero-image">
                     <img src="Ayushil Gold Kit.jpeg" 
                          alt="Complete Ayushil Gold Kit with 60+60 capsules and oil" 
-                         loading="lazy">
+                         id="hero-slider" 
+                         loading="eager">
+                    <div class="image-slider-controls">
+                        <div class="slider-dot active" data-image="Ayushil Gold Kit.jpeg"></div>
+                        <div class="slider-dot" data-image="Ayushil POWER capsules.jpeg"></div>
+                        <div class="slider-dot" data-image="Ayushil STAMIN capsules.jpeg"></div>
+                        <div class="slider-dot" data-image="X-tream Oil.jpeg"></div>
+                    </div>
                 </div>
             </div>
         </section>
@@ -669,6 +766,10 @@
                         <p class="quote">"The results are incredible! I have more strength and confidence. Thank you, Avana Ayurveda!"</p>
                         <p class="customer-name">- Anil S.</p>
                     </div>
+                    <div class="testimonial-card">
+                        <p class="quote">"After using this kit for just 2 weeks, I noticed a significant improvement in my stamina during workouts."</p>
+                        <p class="customer-name">- Vikram P.</p>
+                    </div>
                 </div>
             </div>
         </section>
@@ -714,6 +815,30 @@
                 }
             });
         });
+        
+        // Image slider functionality
+        const sliderDots = document.querySelectorAll('.slider-dot');
+        const heroImage = document.getElementById('hero-slider');
+        
+        sliderDots.forEach(dot => {
+            dot.addEventListener('click', function() {
+                // Update active dot
+                sliderDots.forEach(d => d.classList.remove('active'));
+                this.classList.add('active');
+                
+                // Change image
+                const imagePath = this.getAttribute('data-image');
+                heroImage.src = imagePath;
+                heroImage.alt = "Ayushil Gold Kit Product";
+            });
+        });
+        
+        // Auto-rotate images every 5 seconds
+        let currentSlide = 0;
+        setInterval(() => {
+            currentSlide = (currentSlide + 1) % sliderDots.length;
+            sliderDots[currentSlide].click();
+        }, 5000);
     </script>
 </body>
 </html>
